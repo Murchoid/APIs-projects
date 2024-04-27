@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign-In Example</title>
+    <!-- Include Google Sign-In library -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+    <!-- Render Google Sign-In button -->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <!-- Include a sign-out button -->
+    <button onclick="signOut()">Sign out</button>
+
+    <script>
+        // Callback function for successful sign-in
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do something with the user's ID
+            console.log('Name: ' + profile.getName()); // Do something with the user's name
+            console.log('Email: ' + profile.getEmail()); // Do something with the user's email
+            // You can also obtain the user's authentication token:
+            // var idToken = googleUser.getAuthResponse().id_token;
+        }
+
+        // Function to sign the user out
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        }
+    </script>
+</body>
+</html>
