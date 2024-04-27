@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="weather app.css">
 </head>
 <body>
-    <div class="container">
-        <div class="weather-display">
+
+    <div class="loading" id="loading"></div>
+    <div class="container" >
+        <div class="weather-display" >
             <input type="text" id="searchInput" placeholder="Enter city name">
             <button id="searchButton">Search</button>
-            <h2 class="location" id="searchedItem">Nairobi</h2>
+            <div id="content">
+                <h2 class="location" id="searchedItem">Nairobi</h2>
             <div class="weather-info">
                 <div class="temperature" > <strong id="temp">25 </strong>°C</div>
                 <div class="weather-description" id="weatherDesc">Sunny</div>
@@ -20,8 +23,9 @@
                 <div class="detail">Humidity: <strong id="Humidity">50</strong> %</div>
                 <div class="detail">Wind Speed: <strong id="windSpeed">10</strong> km/hr</div>
             </div>
+            </div>
         </div>
     </div>
-    <script src="weather app.js"></script>
+    <script src="weather app.js" defer></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 const inputLand = document.getElementById("searchInput");
 const search = document.getElementById("searchButton");
+const container = document.getElementById("content");
 const searchedItem = document.getElementById("searchedItem");
 const temp = document.getElementById("temp");
 const weatherDesc = document.getElementById("weatherDesc");
@@ -16,6 +17,9 @@ async function getWeather() {
             city = searchedItem.innerText;
             return;
         }
+        
+        loading.style.display = "block";
+        container.style.display = "none";
 
         // Fetch weather data
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`);
@@ -34,6 +38,9 @@ async function getWeather() {
         console.log("humidity: " + data.main.humidity);
         console.log(data);
 
+        loading.style.display = "none";
+        container.style.display = "block";
+
         searchedItem.innerText = inputLand.value;
         temp.innerText = Math.ceil(data.main.temp-273);
         weatherDesc.innerText = data.weather[0].description;
@@ -44,6 +51,7 @@ async function getWeather() {
 
     } catch (error) {
         console.error('Error fetching weather data:', error);
+        container.innerText = "Error fetching weather data";
     }
 }
 
