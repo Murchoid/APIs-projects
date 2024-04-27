@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Sign-In Example</title>
-    <!-- Include Google Sign-In library -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="weather app.css">
 </head>
 <body>
-    <!-- Render Google Sign-In button -->
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <!-- Include a sign-out button -->
-    <button onclick="signOut()">Sign out</button>
-
-    <script>
-        // Callback function for successful sign-in
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do something with the user's ID
-            console.log('Name: ' + profile.getName()); // Do something with the user's name
-            console.log('Email: ' + profile.getEmail()); // Do something with the user's email
-            // You can also obtain the user's authentication token:
-            // var idToken = googleUser.getAuthResponse().id_token;
-        }
-
-        // Function to sign the user out
-        function signOut() {
-            var auth2 = gapi.auth2.getAuthInstance();
-            auth2.signOut().then(function () {
-                console.log('User signed out.');
-            });
-        }
-    </script>
+    <div class="container">
+        <div class="weather-display">
+            <input type="text" id="searchInput" placeholder="Enter city name">
+            <button id="searchButton">Search</button>
+            <h2 class="location" id="searchedItem">Nairobi</h2>
+            <div class="weather-info">
+                <div class="temperature" > <strong id="temp">25 </strong>°C</div>
+                <div class="weather-description" id="weatherDesc">Sunny</div>
+            </div>
+            <div class="additional-info">
+                <div class="detail">Humidity: <strong id="Humidity">50</strong> %</div>
+                <div class="detail">Wind Speed: <strong id="windSpeed">10</strong> km/hr</div>
+            </div>
+        </div>
+    </div>
+    <script src="weather app.js"></script>
 </body>
 </html>
