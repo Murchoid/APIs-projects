@@ -46,8 +46,14 @@ async function getWeather() {
     } catch (error) {
         console.error('Error fetching weather data:', error);
         container.innerText = "Error fetching weather data";
+        container.style.display = "block";
+        loading.style.display = "none";
+        inputLand.value = "";
     }
 }
 
 
 search.addEventListener("click", getWeather);
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Enter") getWeather();
+});
