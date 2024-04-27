@@ -31,12 +31,6 @@ async function getWeather() {
 
         // Parse JSON response
         const data = await response.json();
-        console.log("City: " + data.name);
-        console.log("weather: " + data.weather[0].description);
-        console.log("wind: " + data.wind.speed);
-        console.log("temp: " + data.main.temp-273);
-        console.log("humidity: " + data.main.humidity);
-        console.log(data);
 
         loading.style.display = "none";
         container.style.display = "block";
