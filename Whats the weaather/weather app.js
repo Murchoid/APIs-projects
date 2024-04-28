@@ -6,7 +6,14 @@ const temp = document.getElementById("temp");
 const weatherDesc = document.getElementById("weatherDesc");
 const Humidity = document.getElementById("Humidity");
 const windSpeed = document.getElementById("windSpeed");
-const API_key = "6cdd9eb4e9d11c28deb2efc9e9ad7357";
+
+try {
+    require('dotenv').config();
+    const API_KEY = process.env.API_KEY;
+    
+} catch (error) {
+    console.error('Error loading environment variables:', error.message);
+}
 
 getWeather();
 async function getWeather() {
