@@ -9,7 +9,7 @@ const windSpeed = document.getElementById("windSpeed");
 
 try {
     require('dotenv').config();
-    const API_KEY = process.env.API_KEY;
+    const APIKEY = process.env.API_KEY;
     
 } catch (error) {
     console.error('Error loading environment variables:', error.message);
@@ -29,7 +29,7 @@ async function getWeather() {
         container.style.display = "none";
 
         // Fetch weather data
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY}`);
         
         // Check for successful response
         if (!response.ok) {
