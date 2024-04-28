@@ -6,16 +6,22 @@ const temp = document.getElementById("temp");
 const weatherDesc = document.getElementById("weatherDesc");
 const Humidity = document.getElementById("Humidity");
 const windSpeed = document.getElementById("windSpeed");
+let APIKEY;
 
-try {
-    require('dotenv').config();
-    const APIKEY = process.env.API_KEY;
-    
-} catch (error) {
-    console.error('Error loading environment variables:', error.message);
+async function getAPI(){
+    const response = await fetch('http://localhost:3000/api/key');
+   try{if (!response.ok) {
+        throw new Error('Unable to fetch weather data');
+    }
+    const api = await response.json();
+    APIKEY = api.apiKey;
+}
+catch(error){
+    console.error("An erro occured: " + error);
+}
 }
 
-getWeather();
+getAPI();
 async function getWeather() {
     try {
         // Validate input

@@ -6,7 +6,7 @@
   "name": "whats-the-weaather",
   "version": "1.0.0",
   "description": "A weather applicaiton that tells you the weather of places in real time",
-  "main": "test.js",
+  "main": "index.js",
   "scripts": {
     "test": "hello world"
   },
