@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Showcase</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+  .product img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    object-fit: cover;
+  }
+  .product-info {
+    flex: 1;
+  }
+  .product-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .product-description {
+    color: #666;
+    margin-bottom: 10px;
+  }
+ button {
+    background-color: hsla(212, 23%, 15%, 0.74);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 16px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+ button:hover {
+    background-color: hsla(212, 23%, 55%, 0.74);
+  }
+  .rating {
+    display: inline-block;
+  }
+  .rating input {
+    display: none;
+  }
+  .rating label {
+    font-size: 24px;
+    color: #ddd;
+    cursor: pointer;
+  }
+  .rating label:hover,
+  .rating label:hover ~ label,
+  .rating input:checked ~ label {
+    color: #f90;
+  }
+  .riview-msg{
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 30%;
+    right: 50%;
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="product">
+    <img src="images/beach.jpeg" alt="Product 1" id="img1">
+    <div class="product-info">
+      <div class="product-title">Product 1</div>
+      <div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="product-buttons">
+        <button class="add-to-cart">Add to Cart</button>
+        <div class="rating">
+          <input type="radio" id="star5" name="rating" value="5">
+          <label for="star5">☆</label>
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4">☆</label>
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3">☆</label>
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2">☆</label>
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1">☆</label>
+        </div>
+        <button >Add Review</button>
+      </div>
+    </div>
+  </div>
+
+<div class="riview-msg">
+   <textarea name="" id="msg" cols="40" rows="15" placeholder="put your riview here">
+   </textarea>
+   <button>submit</button>
+</div>
+
+  <div class="product">
+    <img src="images/bird.jpeg" alt="Product 2" id="image 1">
+    <div class="product-info">
+      <div class="product-title">Product 2</div>
+      <div class="product-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      <div class="product-buttons">
+        <button>Add to Cart</button>
+        <div class="rating">
+          <input type="radio" id="star10" name="rating2" value="5">
+          <label for="star10">☆</label>
+          <input type="radio" id="star9" name="rating2" value="4">
+          <label for="star9">☆</label>
+          <input type="radio" id="star8" name="rating2" value="3">
+          <label for="star8">☆</label>
+          <input type="radio" id="star7" name="rating2" value="2">
+          <label for="star7">☆</label>
+          <input type="radio" id="star6" name="rating2" value="1">
+          <label for="star6">☆</label>
+        </div>
+        <button>Add Review</button>
+      </div>
+    </div>
+  </div>
+  <!-- Add more products here -->
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "addtocart",
+  "version": "1.0.0",
+  "description": "add to cart app",
+  "main": "index.js",
+  "scripts": {
+    "test": "hello world"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Murchoid/APIs-projects.git"
+  },
+  "author": "Murchoid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Murchoid/APIs-projects/issues"
+  },
+  "homepage": "https://github.com/Murchoid/APIs-projects#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
