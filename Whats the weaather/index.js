@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 
 // Define a route to handle requests for the API key
 app.get('/api/key', (req, res) => {
-    // Return the API key (replace 'YOUR_API_KEY' with your actual API key)
+    // Return the API key
     res.json({ apiKey: API_KEY});
 });
 
